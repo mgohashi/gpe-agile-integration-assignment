@@ -23,12 +23,31 @@
    git clone https://github.com/mgohashi/gpe-agile-integration-assignment
    ```
 
+   - Go into the `parent` folder and run the following command:
+
+     ```shell
+     mvn clean install
+     ```
+
+   - Go into the `artifacts` folder and run the following command:
+
+     ```shell
+     mvn clean install
+     ```
+
 4. After configured run the broker and the following components in the following order using `mvn clean spring-boot:run` command:
   
-   - `inbound`
-   - `xlate`
-   - `services/integration-test-server`
-   - `outbound`
+   ---
+   **NOTE**
+
+   The components bellow will use the port: `amq.port=5672` and the host: `amq.host=localhost`.
+
+   ---
+
+   - `inbound`: this component will listen in the port `8080` in the path `/camel/match`. To access the service access [http://localhost:8080/camel/match](http://localhost:8080/camel/match)
+   - `xlate`: this component is totally message based
+   - `services/integration-test-server`: this component will listen in the port `9080` in the path `/service/PersonEJBService/PersonEJB`. To access the WSDL file access the following URL: [http://localhost:9080/service/PersonEJBService/PersonEJB?wsdl](http://localhost:9080/service/PersonEJBService/PersonEJB?wsdl)
+   - `outbound`: This component is totally message based and it integrates with the `integration-test-server` using SOAP protocol.
 
 5. Test the communication using the following command. Make sure you run the following command in the main folder:
 
