@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:executeMatchUpdate xmlns:ns2="http://webservice.index.mdm.sun.com/">
+    <callerInfo>
+        <application>App</application>
+        <applicationFunction>Function</applicationFunction>
+        <authUser>Xlate</authUser>
+    </callerInfo>
+    <sysObjBean>
+        <person>
+            <fatherName>p:fathername</fatherName>
+            <firstName>p:given</firstName>
+            <gender>p:code</gender>
+        </person>
+    </sysObjBean>
+</ns2:executeMatchUpdate>
