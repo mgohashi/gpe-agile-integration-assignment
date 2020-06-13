@@ -17,14 +17,20 @@
    - `q.empi.nextgate.out`: This queue receives the message that is transformed by the `xlate` component and is also the input queue for the `outbound` component.
    - `q.empi.nextgate.dlq`: If anything goes wrong when the `outbound` component tries to call the `integration-test-server` then the original message will be sent to this queue.
 
-3. After configured run the broker and the following components in the following order using `mvn clean spring-boot:run` command:
+3. Clone the project at:
+
+   ```shell
+   git clone https://github.com/mgohashi/gpe-agile-integration-assignment
+   ```
+
+4. After configured run the broker and the following components in the following order using `mvn clean spring-boot:run` command:
   
    - `inbound`
    - `xlate`
    - `services/integration-test-server`
    - `outbound`
 
-4. Test the communication using the following command. Make sure you run the following command in the main folder:
+5. Test the communication using the following command. Make sure you run the following command in the main folder:
 
    ---
    **NOTE**
